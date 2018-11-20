@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './header/Header';
-import Body from './body/Body';
+import BodyContainer from './body/BodyContainer';
 import Footer from './Footer';
 import { createGlobalStyle } from 'styled-components'
 
@@ -36,14 +36,12 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-// @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext');
-
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Header />
-        <Body />
+        <BodyContainer />
         <Footer />
         <GlobalStyle />
       </div>

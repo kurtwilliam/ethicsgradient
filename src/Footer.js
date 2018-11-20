@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import Beginning from './assets/footer/beginning.png';
-import ASCII from './assets/footer/ascii.png';
+import ASCII from './assets/footer/ascii2.png';
 import Bug1 from './assets/footer/bug1.png';
 import Graveyard from './assets/footer/graveyard.png';
 import Lighthouse from './assets/footer/lighthouse.png';
+import Fire from './assets/footer/blueflame.gif';
 
 const Footer = styled.div`
     width:100%;
@@ -51,13 +52,14 @@ const FooterBox = styled.div`
 
     .footerBox__top {
         display:flex;
+        justify-content:space-between;
 
         @media(max-width:850px) {
             flex-direction:column;
         }
 
         &--cont {
-            width:50%;
+            width:48.5%;
             @media(max-width:850px) {
                 width:100%;
             }
@@ -85,7 +87,19 @@ const FooterBox = styled.div`
             font-weight:200;
 
             &__cont {
-                border-bottom: 10px double rgb(127,127,127);
+                border-bottom: 1px solid rgb(127,127,127);
+                position:relative;
+                margin-bottom:5px;
+
+                &:after {
+                    content: " ";
+                    position: absolute;
+                    top: auto;
+                    left: 0px;
+                    right: 0px;
+                    bottom: -5px;
+                    border: 0.2px solid rgb(127,127,127);
+                }
             }
         }
 
@@ -94,8 +108,19 @@ const FooterBox = styled.div`
             text-transform:uppercase;
             font-size:1.2rem;
             display:flex;
-            border-bottom: 10px double rgb(127,127,127);
+            border-bottom: 1px solid rgb(127,127,127);
             padding: 8px 0;
+            position:relative;
+
+            &:after {
+                content: " ";
+                position: absolute;
+                top: auto;
+                left: 0px;
+                right: 0px;
+                bottom: -5px;
+                border: 0.2px solid rgb(127,127,127);
+            }
 
             @media(max-width:850px) {
                 border-bottom: none;
@@ -119,8 +144,21 @@ const FooterBox = styled.div`
                 position:relative;
                 height:auto;
                 border-radius:50%;
-                background: linear-gradient(to bottom, rgb(236,236,236) 0%, rgb(231,231,231) 100%);
                 max-width: 100px;
+                overflow:hidden;
+
+                div {
+                    position:relative;
+                    height:100%;
+                    width:100%;
+                    background:rgb(238,238,238);
+                    background-image:url(${Fire});
+
+                    background-attachment: fixed;
+                    background-position: 89% 10%;
+                    background-repeat: no-repeat;
+                    background-size: 70px auto;
+                }
             }
 
             &__cont {
@@ -188,13 +226,14 @@ const FooterBar = styled.div`
     width:100%;
     padding:14px 24px;
     display:flex;
+    align-items:center;
     justify-content:space-between;
     font-family: 'PingFang SC', sans-serif;
-    font-size:1.6rem;
     background:rgb(25,25,25);
 
     p {
         color:white;
+        font-size:1.6rem;
     }
 `
 
@@ -235,7 +274,9 @@ class Header extends Component {
                                     <div className="oneThird oneThird__bug">
                                         <img alt="bug" src={Bug1} />
                                     </div>
-                                    <div className="oneThird hole" />
+                                    <div className="oneThird hole" >
+                                        <div/>
+                                    </div>
                                 </div>
                             </div>
                         </div>
