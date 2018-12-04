@@ -27,6 +27,8 @@ const GlobalStyle = createGlobalStyle`
     padding:0;
     margin:0;
     font-family: '.PingFang SC', Heiti, -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  html {
     font-size:62.5%;
   }
   body {
