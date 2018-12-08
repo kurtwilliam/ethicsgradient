@@ -22,7 +22,7 @@ class Header extends Component {
         const contHeight = fireContainer.offsetHeight;
         const contPos = fireContainer.getBoundingClientRect();
 
-        this.setState({ fireX: contPos.x + (contWidth * 0.15), fireY: contPos.y + (contHeight * 0.15), })
+        this.setState({ fireX: contPos.x + (contWidth * 0.15), fireY: contPos.y + (contHeight * -0.2), })
     }
 
     render() {

@@ -118,7 +118,7 @@ const FooterBox = styled.div`
                 overflow:hidden;
 
                 div {
-                    position:relative;
+                    position:absolute;
                     height:100%;
                     width:100%;
                     background:rgb(238,238,238);
