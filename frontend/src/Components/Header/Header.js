@@ -1,12 +1,13 @@
 import React from 'react';
 import Chunk from '../shared/Chunk';
 
-const Header = () => 
-  <Header>
-    <Chunk>
+const Header = () =>
+  <Chunk>
+    <header>
       I m hedr
-    </Chunk>
-  </Header>
+    </header>
+  </Chunk>
+
 
 export default Header;
 

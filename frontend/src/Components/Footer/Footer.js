@@ -10,7 +10,7 @@ import Bug1 from '../../assets/footer/bug1.png';
 import Graveyard from '../../assets/footer/graveyard.png';
 import Lighthouse from '../../assets/footer/lighthouse.png';
 
-class Header extends Component {
+class Footer extends Component {
     state={
         fireX:0,
         fireY:0,
@@ -84,4 +84,4 @@ class Header extends Component {
     }
 }
 
-export default Header;
+export default Footer;
