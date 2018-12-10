@@ -5,10 +5,10 @@ import FooterCont from './FooterCont';
 import FooterBox from './FooterBox';
 import FooterBar from './FooterBar';
 
-import Beginning from '../assets/footer/beginning.png';
-import Bug1 from '../assets/footer/bug1.png';
-import Graveyard from '../assets/footer/graveyard.png';
-import Lighthouse from '../assets/footer/lighthouse.png';
+import Beginning from '../../assets/footer/beginning.png';
+import Bug1 from '../../assets/footer/bug1.png';
+import Graveyard from '../../assets/footer/graveyard.png';
+import Lighthouse from '../../assets/footer/lighthouse.png';
 
 class Header extends Component {
     state={

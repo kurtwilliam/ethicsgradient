@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import BodyContainer from './BodyContainer';
 
 class Body extends Component {
     render() {
         return (
-            <div>
+            <BodyContainer>
                 I mbody
-            </div>
+            </BodyContainer>
         )
     }
 }

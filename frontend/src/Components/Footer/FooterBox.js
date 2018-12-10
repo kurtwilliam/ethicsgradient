@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import ASCII from '../assets/footer/ascii2.png';
-import Fire from '../assets/footer/blueflame.gif';
+import ASCII from '../../assets/footer/ascii2.png';
+import Fire from '../../assets/footer/blueflame.gif';
 
 const FooterBox = styled.div`
     width:100%;

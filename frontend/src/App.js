@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Header from './header/Header';
-import BodyContainer from './body/BodyContainer';
-import Footer from './Footer';
+import Header from './Components/Header';
+import Body from './Components/Body';
+import Footer from './Components/Footer';
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
@@ -43,7 +43,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <BodyContainer />
+        <Body />
         <Footer />
         <GlobalStyle />
       </div>
