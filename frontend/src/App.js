@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Body from "./Components/Body";
 import Footer from "./Components/Footer";
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -37,14 +37,38 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const theme = {
+  golBrown: "rgb(77,33,27)",
+  golTan: "rgb(151,138,88)",
+  golOffWhite: "rgb(210,210,206)",
+  golOffWhiteDark: "rgb(133, 133, 128);",
+  golOffWhiteDarker: "rgb(120, 120, 115);",
+  golBorderWidth: 2.5,
+  golHighlight: "maroon",
+  golGrey: "rgb(143, 142, 152)",
+  golPrimary1: "#22A657",
+  golPrimary2: "#D3FBC5",
+  golPrimary3: "#0E6D34",
+  golButtonColor: "#363834",
+  golTextColor: "#1C1919",
+  golGrey1: "#959695",
+  golCream: "#C4C4C4",
+  golWhite: "white",
+  golBlack: "black",
+  golHoleColor1: "#ECEBE9",
+  golHoleColor2: "#DEDDDB"
+};
+
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Body />
-        <Footer />
-        <GlobalStyle />
-      </div>
+      <ThemeProvider theme={theme}>
+        <div className="App">
+          <Body />
+          <Footer />
+          <GlobalStyle />
+        </div>
+      </ThemeProvider>
     );
   }
 }

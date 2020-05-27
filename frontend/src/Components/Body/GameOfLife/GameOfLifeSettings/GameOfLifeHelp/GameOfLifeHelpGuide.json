@@ -1,0 +1,74 @@
+[
+  {
+    "shouldZoom": 5,
+    "shouldCenter": false,
+    "shouldClear": false,
+    "showNeighbourCount": false,
+    "speed": 1,
+    "patternToGenerate": "",
+    "html": "<p>MicroBiome Simulator is a collection of colored cells on a grid, that becomes complex over time based on simple math. It's based off of <a target='__blank' href='https://www.conwaylife.com/wiki/Conway%27s_Game_of_Life'>The Game of Life</a> by John Horton Conway.</p>"
+  },
+  {
+    "shouldZoom": 5,
+    "shouldCenter": true,
+    "shouldClear": true,
+    "showNeighbourCount": false,
+    "speed": 1,
+    "patternToGenerate": "Line",
+    "html": "<p>Each cell is either Alive or Dead. The dark cells are alive, and you can't see the Dead cells. Whether or not a cell is alive depends on how many of it's neighbours are alive.</p>"
+  },
+  {
+    "shouldZoom": 5,
+    "shouldCenter": false,
+    "shouldClear": true,
+    "showNeighbourCount": true,
+    "speed": 1,
+    "patternToGenerate": "Line",
+    "html": "<p>If a cell is <strong>alive</strong> and has <strong>2 or 3 alive</strong> neighbours, it remains alive. If a cell is <strong>dead</strong> but has <strong>3 alive</strong> neighbours, it comes to life.</p></br><p>The numbers in the cells on the left represent how many neighbours it has alive. Notice the neighbour counts; the center never changes because it always has 3 neighbours, but the outside squares switch because the dead cells have 3.</p>"
+  },
+  {
+    "shouldZoom": 5,
+    "shouldCenter": true,
+    "shouldClear": true,
+    "showNeighbourCount": true,
+    "speed": 1,
+    "patternToGenerate": "Block",
+    "html": "<p>This is another common pattern that emerges. This square stays the same, as the <strong>alive</strong> cells always have <strong>3 alive</strong> neighbours and the <strong>dead</strong> cells never have <strong>more than 2</strong>.</p>"
+  },
+  {
+    "shouldZoom": 2.5,
+    "shouldCenter": true,
+    "shouldClear": true,
+    "showNeighbourCount": true,
+    "speed": 3,
+    "patternToGenerate": "Pulsar",
+    "html": "<p>Simple enough, right?</p></br><p>Patterns can get a little bit more complicated though, and there are different types of patterns. This type is called an <strong>oscillator</strong>, as the pattern keeps repeating.</p>"
+  },
+  {
+    "shouldZoom": 1.75,
+    "shouldCenter": true,
+    "shouldClear": true,
+    "showNeighbourCount": true,
+    "speed": 5,
+    "patternToGenerate": "Big Spaceship",
+    "html": "<p>And, this type is a <strong>Space Ship</strong> because it moves across the grid.</p>"
+  },
+  {
+    "shouldZoom": 0.5,
+    "shouldCenter": true,
+    "shouldClear": true,
+    "showNeighbourCount": false,
+    "speed": 30,
+    "patternToGenerate": "Scholar",
+    "html": "<p>A bigger spaceship...</p>"
+  },
+  {
+    "shouldZoom": 0.5,
+    "shouldCenter": true,
+    "shouldClear": true,
+    "showNeighbourCount": false,
+    "speed": 30,
+    "patternToGenerate": "Venetian Blinds",
+    "html": "<p>And a type called Agar... I think you get the picture.</p></br><p>To see more patterns, you can <u id='addPatterns'>Add Patterns</u> here.</p></br><p>If you want to learn more, check out the <a target='__blank' href='https://www.conwaylife.com/wiki/Conway%27s_Game_of_Life'>wiki</a>.</p></br><p>If you want to know how it was made, check out the <u id='developerNotes'>Developer Notes</a>.</p>"
+  }
+]
