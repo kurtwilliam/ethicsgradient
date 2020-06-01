@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import guide from "./GameOfLifeHelpGuide.json";
 import HelpButtonCaret from "../../assets/HelpButtonCaret";
+import conway from "../../../../../assets/GameOfLife/conway.png";
 
 class GameOfLifeHelp extends Component {
   state = {
@@ -23,6 +24,7 @@ class GameOfLifeHelp extends Component {
 
     let addPatterns = document.getElementById("addPatterns");
     let developerNotes = document.getElementById("developerNotes");
+    let finishButton = document.getElementsByClassName("finishButton");
 
     if (addPatterns || developerNotes) {
       addPatterns.addEventListener("click", () =>
@@ -30,6 +32,10 @@ class GameOfLifeHelp extends Component {
       );
       developerNotes.addEventListener("click", () => this.toggleNotes);
     }
+    if (finishButton[0])
+      finishButton[0].addEventListener("click", () =>
+        updateState("displayedInfo", "settings")
+      );
   };
 
   render() {
@@ -49,6 +55,11 @@ class GameOfLifeHelp extends Component {
           {hideDevNotes ? (
             <>
               {ReactHtmlParser(guide[currentHelpPage].html)}
+              {currentHelpPage === 0 ? (
+                <div className="conwayImg">
+                  <img src={conway} />
+                </div>
+              ) : null}
               <div className="gol__help--pages">
                 {currentHelpPage > 0 ? (
                   <button

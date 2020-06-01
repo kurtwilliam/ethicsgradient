@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const EntireFooter = styled.div`
   width: 100%;
-  min-height: 100vh;
+  min-height: 80vh;
   max-width: 100vw;
   position: relative;
   background-image: linear-gradient(

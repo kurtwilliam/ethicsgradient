@@ -132,7 +132,13 @@ class GameOfLifeGrid extends Component {
 
     if (displayedInfo !== prevProps.displayedInfo) {
       displayedInfoVar = displayedInfo;
-      if (prevProps.displayedInfo === "help") showNeighbourCountVar = false;
+      if (prevProps.displayedInfo === "help") {
+        showNeighbourCountVar = false;
+        if (prevProps.zoomLevel > 2) {
+          zoomLevelVar = 2;
+          this.checkGridFitsScreen();
+        }
+      }
     }
     if (paused !== prevProps.paused) {
       isPaused = paused;

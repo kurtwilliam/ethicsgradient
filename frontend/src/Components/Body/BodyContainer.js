@@ -9,11 +9,7 @@ import GameOfLife from "./GameOfLife";
 
 class BodyContainer extends Component {
   render() {
-    return (
-      <Chunk>
-        <GameOfLife />
-      </Chunk>
-    );
+    return <Chunk>{/* <GameOfLife /> */}</Chunk>;
   }
 }
 

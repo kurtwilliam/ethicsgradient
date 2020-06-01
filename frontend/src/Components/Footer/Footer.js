@@ -17,15 +17,25 @@ class Footer extends Component {
   };
 
   componentDidMount() {
-    const fireContainer = this.refs.FireContainer;
-    const contWidth = fireContainer.offsetWidth;
-    const contHeight = fireContainer.offsetHeight;
-    const contPos = fireContainer.getBoundingClientRect();
+    setTimeout(() => {
+      // wait til things load
+      const fireContainer = this.refs.FireContainer;
+      const contWidth = fireContainer.offsetWidth;
+      const contHeight = fireContainer.offsetHeight;
+      const contPos = fireContainer.getBoundingClientRect();
+      // 1070 725
+      console.log(fireContainer);
+      console.log(contWidth, contHeight);
+      console.log(contPos);
 
-    this.setState({
-      fireX: contPos.x + contWidth * 0.15,
-      fireY: contPos.y + contHeight * -0.2
-    });
+      console.log(contPos.x + contWidth * 1);
+      console.log(contPos.y + contHeight * 0.35);
+
+      this.setState({
+        fireX: contPos.x + contWidth * 0.145,
+        fireY: contPos.y + contHeight * 0.15
+      });
+    }, 20);
   }
 
   render() {
@@ -74,7 +84,7 @@ class Footer extends Component {
               </div>
             </div>
             <div className="footerBox__content">
-              <p>
+              {/* <p>
                 Ethics Gradient is a FULL STACK DESIGN and DEVELOPMENT and
                 MARKETING and BUSINESS firm. We are two real startup guys ready
                 to hit the ground running and fully synergize with your business
@@ -85,15 +95,15 @@ class Footer extends Component {
                 MARKETING and BUSINESS firm. We are two real startup guys ready
                 to hit the ground running and fully synergize with your business
                 family.
-              </p>
+              </p> */}
             </div>
           </FooterBox>
         </FooterCont>
-        <FooterBar>
+        {/* <FooterBar>
           <p>the bottom.</p>
           <p>contact us.</p>
           <p>secret collection →</p>
-        </FooterBar>
+        </FooterBar> */}
       </EntireFooter>
     );
   }

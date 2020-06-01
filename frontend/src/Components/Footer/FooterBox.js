@@ -47,6 +47,10 @@ const FooterBox = styled.div`
       .footerBox__top--title__cont {
         display: flex;
       }
+
+      @media (max-width: 850px) {
+        margin-top: 14px;
+      }
     }
 
     &--title {

@@ -2,6 +2,13 @@ import React, { Component } from "react";
 import Body from "./Components/Body";
 import Footer from "./Components/Footer";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
+import { Router, Route, Link } from "react-router-dom";
+import { createBrowserHistory } from "history";
+
+import Home from "./Components/Routes/Home";
+import GameOfLife from "./Components/Routes/GameOfLife";
+
+const createdHistory = createBrowserHistory();
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -64,8 +71,11 @@ class App extends Component {
     return (
       <ThemeProvider theme={theme}>
         <div className="App">
-          <Body />
-          <Footer />
+          <Router history={createdHistory}>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/bc" component={GameOfLife} />
+          </Router>
+          {/* <Body /> */}
           <GlobalStyle />
         </div>
       </ThemeProvider>

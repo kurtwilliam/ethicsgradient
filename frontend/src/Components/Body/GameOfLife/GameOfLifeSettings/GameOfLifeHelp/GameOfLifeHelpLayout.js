@@ -34,7 +34,7 @@ const GameOfLifeHelpLayout = styled.div`
 
     p,
     a {
-      font-size: 2rem;
+      font-size: 1.4rem;
       color: ${p => p.theme.golTextColor};
       font-weight: bold;
     }
@@ -73,15 +73,48 @@ const GameOfLifeHelpLayout = styled.div`
       color: ${p => p.theme.golTextColor};
     }
 
+    .conwayImg {
+      padding-top: 16px;
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+
+      img {
+        width: 200px;
+      }
+    }
+
+    button.finishButton {
+      background: ${p => p.theme.golPrimary3};
+      padding: 8px 10px;
+      font-size: 2.4rem;
+      font-weight: bold;
+      color: ${p => p.theme.golWhite};
+      outline: none;
+      // max-height: 52px;
+      border: none;
+      transition: all 50ms;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      padding: 8px 24px;
+
+      &:after,
+      &:before {
+        content: none;
+      }
+    }
+
     &--pages {
       position: absolute;
-      bottom: 56px;
+      bottom: 24px;
       left: 0;
       right: 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0 24px;
+
       button {
         background: ${p => p.theme.golPrimary3};
         padding: 8px 10px;

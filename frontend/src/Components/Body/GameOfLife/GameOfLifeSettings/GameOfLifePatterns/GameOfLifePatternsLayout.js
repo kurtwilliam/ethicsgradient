@@ -93,6 +93,22 @@ const GameOfLifePatternsLayout = styled.div`
         transition: all 120ms;
       }
 
+      &__row {
+        span {
+          ${capFont};
+          display: block;
+
+          &:first-of-type {
+            text-transform: capitalize;
+            font-weight: bold;
+          }
+          &:last-of-type {
+            min-width: 75px;
+            text-align: right;
+          }
+        }
+      }
+
       &.selected {
         span:first-of-type {
           text-transform: uppercase;
@@ -104,7 +120,7 @@ const GameOfLifePatternsLayout = styled.div`
 
           span:first-of-type,
           a {
-            font-size: 1.2rem;
+            font-size: 1.2rem !important;
             font-weight: normal;
             letter-spacing: inherit;
             text-transform: capitalize;
@@ -112,20 +128,15 @@ const GameOfLifePatternsLayout = styled.div`
           }
         }
       }
-
-      span {
-        ${capFont};
-        display: block;
-
-        &:first-of-type {
-          text-transform: capitalize;
-          font-weight: bold;
-        }
-        &:last-of-type {
-          min-width: 75px;
-          text-align: right;
-        }
+      .gol__patterns--pattern__hidden span:first-of-type,
+      a {
+        font-size: 1.2rem !important;
+        font-weight: normal;
+        letter-spacing: inherit;
+        text-transform: capitalize;
+        min-width: inherit;
       }
+
       &__hidden {
         overflow: hidden;
         max-height: 0;
