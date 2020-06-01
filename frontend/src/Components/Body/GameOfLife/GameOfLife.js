@@ -21,6 +21,10 @@ class GameOfLife extends Component {
     currentHelpPage: 0
   };
 
+  componentDidMount() {
+    document.title = "Bacterial Colony";
+  }
+
   handleChange = e =>
     this.setState({
       [e.target.name]:
