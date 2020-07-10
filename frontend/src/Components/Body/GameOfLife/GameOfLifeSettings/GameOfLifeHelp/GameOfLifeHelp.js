@@ -60,37 +60,7 @@ class GameOfLifeHelp extends Component {
                   <img src={conway} />
                 </div>
               ) : null}
-              <div className="gol__help--pages">
-                {currentHelpPage > 0 ? (
-                  <button
-                    className="gol__help--pages__previous"
-                    onClick={() =>
-                      updateState("currentHelpPage", currentHelpPage - 1)
-                    }
-                  >
-                    <span>
-                      <HelpButtonCaret />
-                    </span>{" "}
-                    previous
-                  </button>
-                ) : (
-                  <span></span>
-                )}
-                {currentHelpPage < guide.length - 1 ? (
-                  <button
-                    onClick={() =>
-                      updateState("currentHelpPage", currentHelpPage + 1)
-                    }
-                  >
-                    next{" "}
-                    <span>
-                      <HelpButtonCaret />
-                    </span>
-                  </button>
-                ) : (
-                  <span></span>
-                )}
-              </div>
+
               {/* <button
                 className="gol__help--switch"
                 onClick={() => this.toggleNotes()}
@@ -150,6 +120,37 @@ class GameOfLifeHelp extends Component {
                 https://www.conwaylife.com/wiki/Caterloopillar
               </p>
             </div>
+          )}
+        </div>
+        <div className="gol__help--pages">
+          {currentHelpPage > 0 ? (
+            <button
+              className="gol__help--pages__previous"
+              onClick={() =>
+                updateState("currentHelpPage", currentHelpPage - 1)
+              }
+            >
+              <span>
+                <HelpButtonCaret />
+              </span>{" "}
+              previous
+            </button>
+          ) : (
+            <span></span>
+          )}
+          {currentHelpPage < guide.length - 1 ? (
+            <button
+              onClick={() =>
+                updateState("currentHelpPage", currentHelpPage + 1)
+              }
+            >
+              next{" "}
+              <span>
+                <HelpButtonCaret />
+              </span>
+            </button>
+          ) : (
+            <span></span>
           )}
         </div>
       </GameOfLifeHelpLayout>

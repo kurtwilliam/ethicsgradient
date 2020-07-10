@@ -25,6 +25,7 @@ const GameOfLifeHelpLayout = styled.div`
     position: relative;
     height: 100%;
     width: 100%;
+    overflow-y: scroll;
 
     border: 12px double #0e6d34;
     border-radius: 14px;
@@ -78,7 +79,7 @@ const GameOfLifeHelpLayout = styled.div`
       position: relative;
       display: flex;
       justify-content: flex-end;
-
+      padding-bottom: 24px;
       img {
         width: 200px;
       }
