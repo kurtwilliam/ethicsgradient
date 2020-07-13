@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import ControlsContainer from "../../../../assets/GameOfLife/ControlsContainer.svg";
 
-const circleButton = p => `
+const circleButton = (p) => `
   position:relative;
   height: 22px;
   width: 22px;
@@ -22,7 +22,7 @@ const circleButton = p => `
   }
 `;
 
-const capFont = p => `
+const capFont = (p) => `
 font-weight:bold;
 font-size:2rem;
 letter-spacing:0.3rem;
@@ -33,10 +33,10 @@ text-transform: uppercase;
 
 const GameOfLifeSettingsLayout = styled.div`
   position: absolute;
-  top: ${p => p.theme.golBorderWidth}vw;
-  right: ${p => p.theme.golBorderWidth}vw;
-  bottom: ${p => p.theme.golBorderWidth}vw;
-  margin-left: ${p => p.theme.golBorderWidth}vw;
+  top: ${(p) => p.theme.golBorderWidth}vw;
+  right: ${(p) => p.theme.golBorderWidth}vw;
+  bottom: ${(p) => p.theme.golBorderWidth}vw;
+  margin-left: ${(p) => p.theme.golBorderWidth}vw;
   width: 400px;
   display: flex;
   flex-direction: column;
@@ -53,7 +53,7 @@ const GameOfLifeSettingsLayout = styled.div`
   button,
   a,
   div {
-    color: ${p => p.theme.golOffWhite};
+    color: ${(p) => p.theme.golOffWhite};
     font-size: inherit;
   }
 
@@ -144,7 +144,7 @@ const GameOfLifeSettingsLayout = styled.div`
             justify-content: flex-start;
             flex-direction: row;
             &__title {
-              top: -14%;
+              top: -13%;
               // @media (max-width: 1500px) {
               //   font-size: 1.6rem;
               //   top: -7%;
@@ -161,8 +161,8 @@ const GameOfLifeSettingsLayout = styled.div`
         left: 4%;
         top: -4%;
         padding: 0 2px;
-        background: ${p => p.theme.golWhite};
-        color: ${p => p.theme.golPrimary3};
+        background: ${(p) => p.theme.golWhite};
+        color: ${(p) => p.theme.golPrimary3};
 
         // @media (max-width: 1500px) {
         //   font-size: 1.6rem;
@@ -176,7 +176,7 @@ const GameOfLifeSettingsLayout = styled.div`
         justify-content: space-between;
         margin-bottom: 2px;
         span {
-          color: ${p => p.theme.golTextColor};
+          color: ${(p) => p.theme.golTextColor};
         }
       }
 
@@ -242,14 +242,14 @@ const GameOfLifeSettingsLayout = styled.div`
         &::-webkit-slider-runnable-track {
           height: 8px;
           width: 100%;
-          background: ${p => p.theme.golPrimary3};
+          background: ${(p) => p.theme.golPrimary3};
           border-radius: 4px;
           height: 4px;
         }
         &::-moz-range-track {
           height: 8px;
           width: 100%;
-          background: ${p => p.theme.golPrimary3};
+          background: ${(p) => p.theme.golPrimary3};
           border-radius: 4px;
           height: 4px;
         }
@@ -272,21 +272,21 @@ const GameOfLifeSettingsLayout = styled.div`
             width:32px;
             height: 32px;
             position: relative;
-            background: ${p => p.theme.golWhite};
-            border: 4px solid ${p => p.theme.golGrey1};
+            background: ${(p) => p.theme.golWhite};
+            border: 4px solid ${(p) => p.theme.golGrey1};
             margin-right: 8px;
           }
 
           &:checked ~ div {
-            border: 4px solid ${p => p.theme.golPrimary1};
-            background: ${p => p.theme.golButtonColor};
+            border: 4px solid ${(p) => p.theme.golPrimary1};
+            background: ${(p) => p.theme.golButtonColor};
 
             &:after {
               content: "";
               width: 6px;
               height: 6px;
               position: absolute;
-              background: ${p => p.theme.golWhite};
+              background: ${(p) => p.theme.golWhite};
               border-radius: 50%;
               top: 6px;
               left: 6px;
@@ -354,8 +354,8 @@ const GameOfLifeSettingsLayout = styled.div`
     top: 0;
     padding: 0 2px;
     z-index: 100000;
-    background: ${p => p.theme.golWhite};
-    color: ${p => p.theme.golPrimary3};
+    background: ${(p) => p.theme.golWhite};
+    color: ${(p) => p.theme.golPrimary3};
   }
 `;
 

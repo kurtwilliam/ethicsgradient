@@ -2,15 +2,15 @@ import styled from "styled-components";
 
 const GameOfLifeGridLayout = styled.div`
   position: absolute;
-  top: ${p => p.theme.golBorderWidth}vw;
-  left: ${p => p.theme.golBorderWidth}vw;
-  bottom: ${p => p.theme.golBorderWidth}vw;
-  width: calc(100vw - ${p => p.theme.golBorderWidth * 3}vw - 400px);
+  top: ${(p) => p.theme.golBorderWidth}vw;
+  left: ${(p) => p.theme.golBorderWidth}vw;
+  bottom: ${(p) => p.theme.golBorderWidth}vw;
+  width: calc(100vw - ${(p) => p.theme.golBorderWidth * 3}vw - 400px);
   max-width: 100%;
   z-index: 1000;
 
   // @media (max-width: 1500px) {
-  //   width: calc(100vw - ${p => p.theme.golBorderWidth * 3}vw - 360px);
+  //   width: calc(100vw - ${(p) => p.theme.golBorderWidth * 3}vw - 360px);
   // }
 
   & > svg {
@@ -34,7 +34,7 @@ const GameOfLifeGridLayout = styled.div`
   }
   & > svg:nth-child(6) {
     left: 100px;
-    top: -88px;
+    top: -68px;
   }
 
   .gol__grid {
@@ -44,13 +44,13 @@ const GameOfLifeGridLayout = styled.div`
       left: 0;
       bottom: 0;
       right: 0;
-      width: calc(100vw - ${p => p.theme.golBorderWidth * 3}vw - 400px);
+      width: calc(100vw - ${(p) => p.theme.golBorderWidth * 3}vw - 400px);
       overflow: hidden;
       max-width: 100%;
       border-radius: 80px;
-      border: 4px solid ${p => p.theme.golPrimary3};
+      border: 4px solid ${(p) => p.theme.golPrimary3};
       border-radius: 80px;
-      background: ${p => p.theme.golOffWhite};
+      background: ${(p) => p.theme.golOffWhite};
     }
 
     &--germStars {
@@ -93,7 +93,7 @@ const GameOfLifeGridLayout = styled.div`
       }
       position: absolute;
       bottom: 0;
-      left: ${p => p.theme.golBorderWidth * 2}vw;
+      left: ${(p) => p.theme.golBorderWidth * 2}vw;
       display: flex;
       align-items: center;
       font-weight: bold;
@@ -101,13 +101,13 @@ const GameOfLifeGridLayout = styled.div`
       width: auto;
       height: auto;
       border: none;
-      background: ${p => p.theme.golPrimary3};
+      background: ${(p) => p.theme.golPrimary3};
       border-radius: 50px;
       cursor: pointer;
       transition: all 50ms;
       padding: 8px 10px;
       font-size: 2.4rem;
-      color: ${p => p.theme.golWhite};
+      color: ${(p) => p.theme.golWhite};
       outline: none;
       transform: rotate(11.45deg);
       max-height: 52px;
@@ -115,7 +115,7 @@ const GameOfLifeGridLayout = styled.div`
       span {
         width: 36px;
         height: 36px;
-        background: ${p => p.theme.golWhite};
+        background: ${(p) => p.theme.golWhite};
         border-radius: 50%;
         display: flex;
         justify-content: center;

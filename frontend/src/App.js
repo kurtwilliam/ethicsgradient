@@ -53,17 +53,18 @@ const theme = {
   golBorderWidth: 2.5,
   golHighlight: "maroon",
   golGrey: "rgb(143, 142, 152)",
-  golPrimary1: "#22A657",
-  golPrimary2: "#D3FBC5",
-  golPrimary3: "#0E6D34",
+  golPrimary1: "#6095A6",
+  golPrimary2: "#E3F98F",
+  golPrimary3: "#364A55",
   golButtonColor: "#363834",
   golTextColor: "#1C1919",
   golGrey1: "#959695",
   golCream: "#C4C4C4",
   golWhite: "white",
   golBlack: "black",
+  golBgBeige: "#F2F1EF",
   golHoleColor1: "#ECEBE9",
-  golHoleColor2: "#DEDDDB"
+  golHoleColor2: "#DEDDDB",
 };
 
 class App extends Component {
