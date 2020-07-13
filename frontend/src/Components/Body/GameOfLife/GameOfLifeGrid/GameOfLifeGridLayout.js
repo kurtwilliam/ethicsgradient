@@ -50,7 +50,7 @@ const GameOfLifeGridLayout = styled.div`
       border-radius: 80px;
       border: 4px solid ${(p) => p.theme.golPrimary3};
       border-radius: 80px;
-      background: ${(p) => p.theme.golOffWhite};
+      background: ${(p) => p.theme.golBgColor};
     }
 
     &--germStars {

@@ -80,7 +80,7 @@ class GameOfLifeGrid extends Component {
     shouldUpdate: true,
     shouldUpdateRowId: null,
     shouldUpdateSquareId: null,
-    browserDimensions: [0, 0]
+    browserDimensions: [0, 0],
   };
 
   componentWillMount = () => {
@@ -94,20 +94,20 @@ class GameOfLifeGrid extends Component {
   componentDidMount = () => {
     this.p5Canvas = new p5(this.Sketch, this.p5Ref);
 
-    this.p5Ref.addEventListener("mousedown", e => this.mousePressed(e));
-    this.p5Ref.addEventListener("mouseup", e => this.mouseReleased(e));
+    this.p5Ref.addEventListener("mousedown", (e) => this.mousePressed(e));
+    this.p5Ref.addEventListener("mouseup", (e) => this.mouseReleased(e));
     this.calculateWidthAndHeight();
 
     fillColor = this.props.theme.golBlack;
     strokeColor = this.props.theme.golBlack;
-    bgColor = this.props.theme.golOffWhite;
+    bgColor = this.props.theme.golBgColor;
 
     // canvas.mouseReleased(e => this.mouseReleased(e));
     // this.p5Ref.addEventListener("wheel", e => this.scaleFunctionality(e));
     // this.p5Ref.addEventListener("pointermove", e => this.scaleFunctionality(e));
   };
 
-  componentDidUpdate = prevProps => {
+  componentDidUpdate = (prevProps) => {
     const {
       speed,
       paused,
@@ -119,7 +119,7 @@ class GameOfLifeGrid extends Component {
       zoomLevel,
       cursorAction,
       displayedInfo,
-      currentHelpPage
+      currentHelpPage,
     } = this.props;
     selectedPatternVar = selectedPattern;
 
@@ -164,7 +164,7 @@ class GameOfLifeGrid extends Component {
     }
   };
 
-  scaleFunctionality = e => {
+  scaleFunctionality = (e) => {
     const { zoomLevel } = this.props;
     e.preventDefault();
 
@@ -282,14 +282,14 @@ class GameOfLifeGrid extends Component {
           nextState: null,
           prevState: state,
           nbrs: 0, // neighbours
-          nextNbrs: 0 // prev neighbours
+          nextNbrs: 0, // prev neighbours
         };
       }
     }
     return newArray;
   };
 
-  handleClick = e => {
+  handleClick = (e) => {
     if (e.target.tagName !== "CANVAS") return;
     const { selectedPattern, zoomLevel } = this.props;
 
@@ -311,7 +311,7 @@ class GameOfLifeGrid extends Component {
     const patternConfig =
       selectedPattern === ""
         ? patterns[0].config
-        : patterns.find(pattern => pattern.name === selectedPattern).config;
+        : patterns.find((pattern) => pattern.name === selectedPattern).config;
 
     this.addPatternToCoords(patternConfig, selectedPattern, xPos, yPos, x, y);
   };
@@ -364,7 +364,7 @@ class GameOfLifeGrid extends Component {
     }
   };
 
-  mouseReleased = e => {
+  mouseReleased = (e) => {
     if (cursorState === "draw") {
       this.handleClick(e);
     } else if (
@@ -378,12 +378,12 @@ class GameOfLifeGrid extends Component {
     clickStartY = null;
   };
 
-  mousePressed = e => {
+  mousePressed = (e) => {
     clickStartX = e.x;
     clickStartY = e.y;
   };
 
-  Sketch = s => {
+  Sketch = (s) => {
     const { speed, selectedPattern, paused, theme } = this.props;
 
     s.setup = () => {
@@ -398,7 +398,7 @@ class GameOfLifeGrid extends Component {
 
       // add event handlers - defining here to canvas
       // makes it so they only apply to canvas
-      canvas.mouseWheel(e => this.scaleFunctionality(e));
+      canvas.mouseWheel((e) => this.scaleFunctionality(e));
       // canvas.mousePressed(e => mousePressed(e));
       // canvas.mouseReleased(e => this.mouseReleased(e));
 
@@ -546,7 +546,7 @@ class GameOfLifeGrid extends Component {
       s.resizeCanvas(browserWidth, browserHeight);
     }
 
-    s.mouseDragged = e => {
+    s.mouseDragged = (e) => {
       const { movementX, movementY, clientX, clientY } = e;
       // TODO investigate what happened to drawing speed
       // investigate performance first
@@ -740,7 +740,7 @@ class GameOfLifeGrid extends Component {
       currentHelpPage,
       toggleState,
       zoomLevel,
-      updateState
+      updateState,
     } = this.props;
     const currentPage = guide[currentHelpPage];
 
@@ -750,7 +750,7 @@ class GameOfLifeGrid extends Component {
       shouldClear,
       patternToGenerate,
       speed,
-      showNeighbourCount
+      showNeighbourCount,
     } = currentPage;
 
     if (shouldClear) {
@@ -786,8 +786,8 @@ class GameOfLifeGrid extends Component {
       <GameOfLifeGridLayout>
         <div
           className="gol__grid--container"
-          ref={ref => (this.p5Ref = ref)}
-        ></div>
+          ref={(ref) => (this.p5Ref = ref)}
+        />
 
         <button
           className={`gol__grid--helpButton ${

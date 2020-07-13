@@ -9,6 +9,7 @@ const GameOfLifeBackgroundLayout = styled.div`
   right: 0;
   bottom: 0;
   z-index: 100;
+  background-color: ${(p) => p.theme.golBgBeige};
   // overflow: hidden;
 `;
 

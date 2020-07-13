@@ -65,6 +65,7 @@ const theme = {
   golBgBeige: "#F2F1EF",
   golHoleColor1: "#ECEBE9",
   golHoleColor2: "#DEDDDB",
+  golBgColor: "#B7BDBA",
 };
 
 class App extends Component {
