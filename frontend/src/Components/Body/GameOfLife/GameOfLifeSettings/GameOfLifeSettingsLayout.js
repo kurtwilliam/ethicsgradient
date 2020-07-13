@@ -145,10 +145,6 @@ const GameOfLifeSettingsLayout = styled.div`
             flex-direction: row;
             &__title {
               top: -13%;
-              // @media (max-width: 1500px) {
-              //   font-size: 1.6rem;
-              //   top: -7%;
-              // }
             }
           }
         }
@@ -163,11 +159,6 @@ const GameOfLifeSettingsLayout = styled.div`
         padding: 0 2px;
         background: ${(p) => p.theme.golWhite};
         color: ${(p) => p.theme.golPrimary3};
-
-        // @media (max-width: 1500px) {
-        //   font-size: 1.6rem;
-        //   top: -3%;
-        // }
       }
 
       label {
