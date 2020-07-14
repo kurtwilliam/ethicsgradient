@@ -11,10 +11,11 @@ const Container = styled.div`
   height: 100vh;
   background: ${p => p.theme.golBgBeige};
   padding: 16px;
+  overflow: hidden;
   .topText {
     width: calc(100% - 32px);
     position: absolute;
-    top: 12%;
+    top: 14%;
     left: 16px;
     right: 0;
     z-index: 1000;
@@ -37,11 +38,43 @@ const Container = styled.div`
     &:first-of-type {
       top: -51%;
       right: -5%;
+
+      @media screen and (max-height: 1024px) {
+        top: -36%;
+      }
+
+      @media screen and (max-height: 830px) {
+        top: -48%;
+      }
+
+      @media screen and (max-height: 750px) {
+        top: -54%;
+      }
+
+      @media screen and (max-height: 660px) {
+        top: -61%;
+      }
     }
 
     &:last-of-type {
       bottom: -25%;
-      right: -60%;
+      left: 10%;
+
+      @media screen and (max-height: 1024px) {
+        bottom: -16%;
+      }
+
+      @media screen and (max-height: 830px) {
+        bottom: -24%;
+      }
+
+      @media screen and (max-height: 750px) {
+        bottom: -29%;
+      }
+
+      @media screen and (max-height: 660px) {
+        bottom: -32%;
+      }
     }
   }
 
@@ -82,10 +115,10 @@ class GameOfLifeSettings extends Component {
           </span>
           <span>~ Pixels whizzing all around.</span>
         </div>
-        <button className={"emailButton"}>
+        {/* <button className={"emailButton"}>
           Email this to myself so I can open it on my desktop computer and spend
           a few moments having fun with math.{" "}
-        </button>
+        </button> */}
 
         <PhoneBacteriaStarTop />
         <PhoneBacterias />
