@@ -6,6 +6,7 @@ import patterns from "./patterns";
 
 import GameOfLifeMidground from "./GameOfLifeMidground";
 import GameOfLifeBackground from "./GameOfLifeBackground";
+import PhoneDisplay from "./PhoneDisplay";
 
 class GameOfLife extends Component {
   state = {
@@ -18,11 +19,14 @@ class GameOfLife extends Component {
     selectedPattern: "Dot",
     cursorAction: "draw",
     displayedInfo: "settings", // settings patterns help
-    currentHelpPage: 0
+    currentHelpPage: 0,
+    deviceWidth: 0
   };
 
   componentDidMount() {
     document.title = "Bacterial Colony";
+    const { innerWidth: width } = window;
+    this.setState({ deviceWidth: width });
   }
 
   handleChange = e =>
@@ -68,45 +72,52 @@ class GameOfLife extends Component {
       selectedPattern,
       cursorAction,
       displayedInfo,
-      currentHelpPage
+      currentHelpPage,
+      deviceWidth
     } = this.state;
-
+    console.log(deviceWidth);
     return (
-      <GameOfLifeLayout className="gol">
-        <GameOfLifeBackground />
-        <GameOfLifeMidground>
-          <GameOfLifeSettings
-            speed={speed}
-            paused={paused}
-            gridSize={gridSize}
-            handleChange={this.handleChange}
-            toggleState={this.toggleState}
-            selectedPattern={selectedPattern}
-            updateSelectedPattern={this.updateSelectedPattern}
-            updateZoom={this.updateZoom}
-            zoomLevel={zoomLevel}
-            cursorAction={cursorAction}
-            displayedInfo={displayedInfo}
-            currentHelpPage={currentHelpPage}
-            updateState={this.updateState}
-          />
-          <GameOfLifeGrid
-            speed={speed}
-            paused={paused}
-            gridSize={gridSize}
-            clear={clear}
-            randomize={randomize}
-            toggleState={this.toggleState}
-            selectedPattern={selectedPattern}
-            updateZoom={this.updateZoom}
-            zoomLevel={zoomLevel}
-            cursorAction={cursorAction}
-            currentHelpPage={currentHelpPage}
-            displayedInfo={displayedInfo}
-            updateState={this.updateState}
-          />
-        </GameOfLifeMidground>
-      </GameOfLifeLayout>
+      <>
+        {deviceWidth < 800 ? (
+          <PhoneDisplay />
+        ) : (
+          <GameOfLifeLayout className="gol">
+            <GameOfLifeBackground />
+            <GameOfLifeMidground>
+              <GameOfLifeSettings
+                speed={speed}
+                paused={paused}
+                gridSize={gridSize}
+                handleChange={this.handleChange}
+                toggleState={this.toggleState}
+                selectedPattern={selectedPattern}
+                updateSelectedPattern={this.updateSelectedPattern}
+                updateZoom={this.updateZoom}
+                zoomLevel={zoomLevel}
+                cursorAction={cursorAction}
+                displayedInfo={displayedInfo}
+                currentHelpPage={currentHelpPage}
+                updateState={this.updateState}
+              />
+              <GameOfLifeGrid
+                speed={speed}
+                paused={paused}
+                gridSize={gridSize}
+                clear={clear}
+                randomize={randomize}
+                toggleState={this.toggleState}
+                selectedPattern={selectedPattern}
+                updateZoom={this.updateZoom}
+                zoomLevel={zoomLevel}
+                cursorAction={cursorAction}
+                currentHelpPage={currentHelpPage}
+                displayedInfo={displayedInfo}
+                updateState={this.updateState}
+              />
+            </GameOfLifeMidground>
+          </GameOfLifeLayout>
+        )}
+      </>
     );
   }
 }
