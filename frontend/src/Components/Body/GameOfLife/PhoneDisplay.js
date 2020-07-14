@@ -58,7 +58,7 @@ const Container = styled.div`
 
     &:last-of-type {
       bottom: -25%;
-      left: 10%;
+      left: 15%;
 
       @media screen and (max-height: 1024px) {
         bottom: -16%;

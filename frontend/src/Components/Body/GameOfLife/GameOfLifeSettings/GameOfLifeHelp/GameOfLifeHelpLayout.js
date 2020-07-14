@@ -27,7 +27,7 @@ const GameOfLifeHelpLayout = styled.div`
     width: 100%;
     overflow-y: scroll;
 
-    border: 12px double #0e6d34;
+    border: 12px double ${p => p.theme.golPrimary3};
     border-radius: 14px;
     padding: 24px;
     padding-top: 32px;
