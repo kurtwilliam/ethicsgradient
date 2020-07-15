@@ -6,7 +6,7 @@ class Body extends Component {
   render() {
     return (
       <>
-        <BodyContainer>I mbody</BodyContainer>
+        <BodyContainer></BodyContainer>
         <Footer />
       </>
     );

@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Body from "./Components/Body";
-import Footer from "./Components/Footer";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { Router, Route, Link } from "react-router-dom";
 import { createBrowserHistory } from "history";
@@ -65,7 +63,7 @@ const theme = {
   golBgBeige: "#F2F1EF",
   golHoleColor1: "#ECEBE9",
   golHoleColor2: "#DEDDDB",
-  golBgColor: "#B7BDBA",
+  golBgColor: "#B7BDBA"
 };
 
 class App extends Component {

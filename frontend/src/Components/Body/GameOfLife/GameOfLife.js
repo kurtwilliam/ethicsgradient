@@ -3,7 +3,7 @@ import GameOfLifeLayout from "./GameOfLifeLayout";
 import GameOfLifeGrid from "./GameOfLifeGrid";
 import GameOfLifeSettings from "./GameOfLifeSettings";
 import patterns from "./patterns";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet";
 import GameOfLifeMidground from "./GameOfLifeMidground";
 import GameOfLifeBackground from "./GameOfLifeBackground";
 import PhoneDisplay from "./PhoneDisplay";
@@ -20,43 +20,58 @@ class GameOfLife extends Component {
     cursorAction: "draw",
     displayedInfo: "settings", // settings patterns help
     currentHelpPage: 0,
-    deviceWidth: 0,
+    deviceWidth: 0
   };
 
   componentDidMount() {
+    // set meta tags
     document.title = "Bacterial Colony";
+    document
+      .querySelector('meta[name="description"]')
+      .setAttribute(
+        "content",
+        "Cellular Automaton (aka fun dancing math patterns in a grid) based off of John Conway's Game of Life."
+      );
+    document
+      .querySelector('meta[name="url"]')
+      .setAttribute("content", "https://ethicsgradient.co/bc");
+    document
+      .querySelector('meta[name="image"]')
+      .setAttribute("content", "./GolThumb.png");
+    document.getElementById("favicon").href = "./golFavicon.ico";
+
     const { innerWidth: width } = window;
     this.setState({ deviceWidth: width });
   }
 
-  handleChange = (e) =>
+  handleChange = e =>
     this.setState({
       [e.target.name]:
         e.target.name !== "cursorAction"
           ? parseInt(e.target.value, 10)
-          : e.target.value,
+          : e.target.value
     });
 
-  toggleState = (e) => {
+  toggleState = e => {
     // if click event, e is normal event
     // if called from grid, e is just a string
     const name = e.target ? e.target.name : e;
-    return this.setState((prevState) => ({
-      [name]: !prevState[name],
+    return this.setState(prevState => ({
+      [name]: !prevState[name]
     }));
   };
-  updateSelectedPattern = (patternName) =>
-    this.setState((prevState) => ({
+  updateSelectedPattern = patternName =>
+    this.setState(prevState => ({
       selectedPattern:
         patternName === "" && prevState.selectedPattern === ""
           ? Object.keys(patterns)[0]
           : patternName,
-      cursorAction: patternName !== "" ? "draw" : prevState.cursorAction,
+      cursorAction: patternName !== "" ? "draw" : prevState.cursorAction
     }));
 
-  updateZoom = (zoom) =>
+  updateZoom = zoom =>
     this.setState({
-      zoomLevel: parseFloat(zoom.target ? zoom.target.value : zoom).toFixed(2),
+      zoomLevel: parseFloat(zoom.target ? zoom.target.value : zoom).toFixed(2)
     });
 
   updateState = (name, value) => this.setState({ [name]: value });
@@ -73,22 +88,11 @@ class GameOfLife extends Component {
       cursorAction,
       displayedInfo,
       currentHelpPage,
-      deviceWidth,
+      deviceWidth
     } = this.state;
     console.log(deviceWidth);
     return (
       <>
-        <MetaTags>
-          <meta
-            name="description"
-            content="Dancing Math Patterns (aka cellular automaton) based off of John Conway's Game of Life."
-          />
-          <meta property="og:title" content="Bacterial Colony" />
-          <meta
-            property="og:image"
-            content="../../../assets/GameOfLife/Thumb.png"
-          />
-        </MetaTags>
         {deviceWidth < 800 ? (
           <PhoneDisplay />
         ) : (

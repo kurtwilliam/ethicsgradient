@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Chunk from "../shared/Chunk";
 
 import GameOfLife from "./GameOfLife";
+import GameOfLifeChunk from "./GameOfLife/GameOfLifeChunk";
 
 // Map over body chunks we get from state
 // from here we render a body piece
@@ -9,7 +10,11 @@ import GameOfLife from "./GameOfLife";
 
 class BodyContainer extends Component {
   render() {
-    return <Chunk>{/* <GameOfLife /> */}</Chunk>;
+    return (
+      <Chunk>
+        <GameOfLifeChunk />
+      </Chunk>
+    );
   }
 }
 
