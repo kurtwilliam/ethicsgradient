@@ -1,21 +1,20 @@
 import React, { Component } from "react";
 import Chunk from "../shared/Chunk";
 
-import GameOfLife from "./GameOfLife";
 import GameOfLifeChunk from "./GameOfLife/GameOfLifeChunk";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
 // Map over body chunks we get from state
 // from here we render a body piece
 // in the body piece we render the type of body it is
 
-class BodyContainer extends Component {
-  render() {
-    return (
-      <Chunk>
-        <GameOfLifeChunk />
-      </Chunk>
-    );
-  }
-}
+const BodyContainer = () => (
+  <DndProvider backend={HTML5Backend}>
+    <Chunk>
+      <GameOfLifeChunk />
+    </Chunk>
+  </DndProvider>
+);
 
 export default BodyContainer;
