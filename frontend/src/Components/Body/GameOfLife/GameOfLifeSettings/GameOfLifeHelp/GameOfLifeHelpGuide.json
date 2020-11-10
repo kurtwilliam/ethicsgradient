@@ -1,28 +1,25 @@
 [
   {
-    "shouldZoom": 5,
+    "shouldZoom": 0,
     "shouldCenter": false,
     "shouldClear": false,
     "showNeighbourCount": false,
-    "speed": 1,
     "patternToGenerate": "",
     "html": "<p>O hi!</p></br><p>Bacterial Colony visualizes cellular automatons  based on The Game of Life by mathematician <a href='https://www.conwaylife.com/wiki/Conway%27s_Game_of_Life'>John Horton Conway.</a></p></br><p>A <a href='https://mathworld.wolfram.com/CellularAutomaton.html'>cellular automaton</a> is a collection of colored cells placed on a grid that evolve through time and create patterns according to the states of neighboring cells. </p></br><p>The \"game\" is actually a zero-player game, its evolution is determined by its initial state, needing no input from human players (yes you). One typically interacts with the Game of Life by creating an initial configuration and observing how it evolves - in Bacterial Colony you can add multiple patterns at a time, and introduce those patterns when ever you’d like, creating complex mathematical blooms and warring factions of cells all driven by a simple set of rules.</p>"
   },
   {
-    "shouldZoom": 5,
+    "shouldZoom": 0,
     "shouldCenter": false,
     "shouldClear": false,
     "showNeighbourCount": false,
-    "speed": 1,
     "patternToGenerate": "",
     "html": "<p>The universe of the Game of Life is an infinite two-dimensional orthogonal grid of square cells, each of which is in one of two possible states — live or dead. </p>"
   },
   {
-    "shouldZoom": 5,
+    "shouldZoom": 0,
     "shouldCenter": false,
     "shouldClear": false,
     "showNeighbourCount": false,
-    "speed": 1,
     "patternToGenerate": "",
     "html": "<p>Every cell interacts with its eight neighbours surrounding it. At each step in time, the following transitions occur:</p></br><p>① Any live cell with fewer than two live neighbours dies (underpopulation/exposure).</p></br>   <p>② Any live cell with more than three live neighbours dies (overpopulation or overcrowding).</p></br><p>③ Any live cell with two or three live neighbours lives, unchanged, to the next generation.</p></br><p>④ Any dead cell with exactly three live neighbours will come to life.</p></br><p>The initial pattern constitutes the 'seed' of the system. The first generation is created by applying the above rules simultaneously to every cell in the seed — births and deaths happen simultaneously, and the discrete moment at which this happens is sometimes called a tick. The rules continue to be applied repeatedly to create further generations.</p>"
   },
@@ -30,7 +27,7 @@
     "shouldZoom": 5,
     "shouldCenter": true,
     "shouldClear": true,
-    "showNeighbourCount": false,
+    "showNeighbourCount": true,
     "speed": 0.5,
     "patternToGenerate": "Line",
     "html": "<p>The numbers in the cells on the left represent how many neighbours each cell has alive.</p></br><p>Notice the neighbour counts; the center never changes because it always has 3 neighbours, but the outside squares switch because the dead cells have 3.</p></br>"

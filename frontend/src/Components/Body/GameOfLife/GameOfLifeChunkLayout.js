@@ -9,10 +9,12 @@ const GameOfLifeChunkLayout = styled(Chunk)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 8px;
+  padding:0 8px;
+  margin-top:16px;
   img {
-    width: 100%;
-    height: auto;
+    width:100%;
+    height:auto;
+    margin-bottom:16px;
   }
 
   span {

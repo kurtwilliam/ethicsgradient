@@ -1,20 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import BodyContainer from "./BodyContainer";
 import Footer from "../Footer";
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from "react-dnd-html5-backend";
 
-// class Body extends Component {
-//   render() {
-//     return (
-//       <>
-//         <BodyContainer></BodyContainer>
-//         <Footer />
-//       </>
-//     );
-//   }
-// }
 const Body = () => (
   <>
-    <BodyContainer />
+    <DndProvider backend={HTML5Backend}>
+      <BodyContainer />
+    </DndProvider>
     <Footer />
   </>
 );

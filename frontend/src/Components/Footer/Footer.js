@@ -24,12 +24,6 @@ class Footer extends Component {
       const contHeight = fireContainer.offsetHeight;
       const contPos = fireContainer.getBoundingClientRect();
       // 1070 725
-      console.log(fireContainer);
-      console.log(contWidth, contHeight);
-      console.log(contPos);
-
-      console.log(contPos.x + contWidth * 1);
-      console.log(contPos.y + contHeight * 0.35);
 
       this.setState({
         fireX: contPos.x + contWidth * 0.145,
