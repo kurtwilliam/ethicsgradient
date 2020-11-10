@@ -12,7 +12,6 @@ import BodyImages from '../shared/BodyImages';
 
 const BodyContainer = () => {
   const { innerHeight, innerWidth } = WindowDimensions();
-  console.log(innerHeight, innerWidth);
   const convertPercentToPx = () => {
     const boxes = BodyImages.map(box => {
       const newBox = box;
@@ -24,7 +23,7 @@ const BodyContainer = () => {
     });
     return boxes;
   }
-  const [boxes, setBoxes] = useState(convertPercentToPx());
+  const [boxes, setBoxes] = useState(convertPercentToPx);
   
   const [, drop] = useDrop({
     accept: "box",
@@ -32,12 +31,12 @@ const BodyContainer = () => {
       const delta = monitor.getDifferenceFromInitialOffset();
       const left = Math.round(item.left + delta.x);
       const top = Math.round(item.top + delta.y);
+
       moveBox(item.id, left, top);
       return undefined;
     }
   });
   const moveBox = (id, left, top) => {
-    console.log(left,top);
     setBoxes(
       update(boxes, {
         [id]: {
@@ -51,8 +50,6 @@ const BodyContainer = () => {
   return (
     <BodyContainerLayout ref={drop}>
       {boxes.map((box,i) => {
-        console.log(boxes);
-        console.log(box);
         const { left, top, title, width, src } = box;
         return (
           <DragChunk key={i} id={i} left={left} top={top} width={width} src={src}>
