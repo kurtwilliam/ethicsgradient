@@ -8,11 +8,24 @@ import DragChunk from "../shared/DragChunk";
 import WindowDimensions from '../shared/WindowDimensions';
 import BodyImages from '../shared/BodyImages';
 
+
+
 const BodyContainer = () => {
   const { innerHeight, innerWidth } = WindowDimensions();
   console.log(innerHeight, innerWidth);
-
-  const [boxes, setBoxes] = useState(BodyImages);
+  const convertPercentToPx = () => {
+    const boxes = BodyImages.map(box => {
+      const newBox = box;
+      const {left,top,width} = box;
+      newBox.left = left * innerWidth / 100;
+      newBox.top = top * innerHeight / 100;
+      newBox.width = width * innerWidth / 100;
+      return newBox;
+    });
+    return boxes;
+  }
+  const [boxes, setBoxes] = useState(convertPercentToPx());
+  
   const [, drop] = useDrop({
     accept: "box",
     drop(item, monitor) {
@@ -33,15 +46,16 @@ const BodyContainer = () => {
       })
     );
   };
+
+  
   return (
     <BodyContainerLayout ref={drop}>
-      {Object.keys(boxes).map(key => {
-        const { left, top, title, width, src } = boxes[key];
-        console.log(width);
-        console.log(width * innerWidth / 100);
-        console.log(width / innerWidth / 100);
+      {boxes.map((box,i) => {
+        console.log(boxes);
+        console.log(box);
+        const { left, top, title, width, src } = box;
         return (
-          <DragChunk key={key} id={key} left={left * innerWidth / 100} top={top * innerHeight / 100} width={width * innerWidth / 100} src={src}>
+          <DragChunk key={i} id={i} left={left} top={top} width={width} src={src}>
             {title}
           </DragChunk>
         );
