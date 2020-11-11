@@ -6,8 +6,7 @@ const Drag = styled.div`
   position: absolute;
   top: ${props => props.top}px;
   left: ${props => props.left}px;
-  min-width:20vw;
-  min-height:20vh;
+  isolation: isolate; 
   img {
     width: ${props => props.width}px;
   }

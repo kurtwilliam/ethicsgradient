@@ -49,6 +49,7 @@ const BodyContainer = () => {
   
   return (
     <BodyContainerLayout ref={drop}>
+      
       {boxes.map((box,i) => {
         const { left, top, title, width, src } = box;
         return (

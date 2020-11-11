@@ -2,45 +2,12 @@ import React, { Component } from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { Router, Route, Link } from "react-router-dom";
 import { createBrowserHistory } from "history";
+import InterLight from './assets/fonts/Inter-Light.woff';
 
 import Home from "./Components/Routes/Home";
 import GameOfLife from "./Components/Routes/GameOfLife";
 
 const createdHistory = createBrowserHistory();
-
-const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: ".PingFang SC";
-    font-weight: 500;
-    src: local(".PingFang-SC-Medium");
-  }
-
-  @font-face {
-    font-family: ".PingFang SC";
-    font-weight: 400;
-    src: local(".PingFang-SC-Regular");
-  }
-
-  @font-face {
-    font-family: ".PingFang SC";
-    font-weight: 300;
-    src: local(".PingFang-SC-Light");
-  }
-  * {
-    box-sizing:border-box;
-    padding:0;
-    margin:0;
-    font-family: '.PingFang SC', Heiti, -apple-system, BlinkMacSystemFont, sans-serif;
-  }
-  html {
-    font-size:62.5%;
-  }
-  body {
-    background:rgb(238,238,238);
-    color:black;
-    font-size:1.6rem;
-  }
-`;
 
 const theme = {
   golBrown: "rgb(77,33,27)",
@@ -63,8 +30,37 @@ const theme = {
   golBgBeige: "#F2F1EF",
   golHoleColor1: "#ECEBE9",
   golHoleColor2: "#DEDDDB",
-  golBgColor: "#B7BDBA"
+  golBgColor: "#B7BDBA",
+
+  greenBeige:"#E8EDDF",
+  greenGrey:"#CFDBD5",
+  greenSlate:"#333533",
+  greenBlack:"#171709",
 };
+
+const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    src: local("${InterLight}");
+  }
+
+  * {
+    box-sizing:border-box;
+    padding:0;
+    margin:0;
+    font-family: 'Inter', Heiti, -apple-system, BlinkMacSystemFont, sans-serif;
+    color:${theme.greenBlack};
+  }
+  html {
+    font-size:62.5%;
+  }
+  body {
+    background:${theme.greenBlack};
+    color:black;
+    font-size:1.6rem;
+  }
+`;
 
 class App extends Component {
   render() {
